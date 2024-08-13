@@ -1,0 +1,25 @@
+<mujoco model="scene">
+	<include file="robot.xml" />
+	<compiler angle="radian" autolimits="true" />
+	<visual>
+		<headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+		<rgba haze="0.15 0.25 0.35 1" />
+		<global azimuth="150" elevation="-20" />
+	</visual>
+	<worldbody>
+		<light pos="0 0 3" dir="0 0 -1" directional="false" />
+		<body name="line_1">
+			<inertial fullinertia="0.1988877 0.14004928 0.33893697 0.02763432 0.0 0.0" pos="0.5476744812555792 0.14724567289739865 -3.999999999999991e-05" mass="0.4027552916770061" />
+			<geom type="mesh" pos="0.339206 -0.293445 -9e-05" quat="1.0 0.0 0.0 0.0" contype="0" conaffinity="0" material="Powder_Coat_(Black)" mesh="line_1_mesh" />
+		</body>
+		<geom name="floor" size="0 0 .125" type="plane" material="groundplane" conaffinity="15" condim="3" />
+	</worldbody>
+	<asset>
+		<material name="Powder_Coat_(Black)" specular="0.5" shininess="0.5" rgba="0.098039 0.098039 0.098039 1.0" />
+		<mesh name="line_1_mesh" file="line_1_mesh.obj" />
+		<texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+		<material name="groundplane" rgba="1 1 1 1" texuniform="true" texrepeat="5 5" reflectance="0.2" />
+	</asset>
+	<equality />
+	<actuator />
+</mujoco>
